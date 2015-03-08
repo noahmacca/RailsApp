@@ -1,0 +1,21 @@
+<%= form_for(@testum) do |f| %>
+  <% if @testum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@testum.errors.count, "error") %> prohibited this testum from being saved:</h2>
+
+      <ul>
+      <% @testum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :t %><br>
+    <%= f.text_field :t %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
